@@ -28,7 +28,7 @@ Abra o `index.html` no navegador (ou acesse pelo GitHub Pages).
 
 ## Android
 
- Para jogar em seu dispositivo móvel basta baixar o jogo .apk ou abrir o `index.html` em seu navegador
+ Para jogar em seu dispositivo móvel basta baixar o jogo `topcraft.apk` ou abrir o `index.html` em seu navegador
   
 ## Tecnologia
 
