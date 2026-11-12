@@ -32,7 +32,6 @@ Abra o [index.html](https://lucasrfmiele13-afk.github.io/CaveBuild/) no navegado
 - T para abrir o chat
 
 #
-
 # Download
 
 ## Computador
