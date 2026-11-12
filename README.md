@@ -9,7 +9,7 @@ Jogo de sobrevivência e criativo em 2.5D, visto de cima, feito em um único arq
 
 ## Como jogar
 
-Abra o `index.html` no navegador (ou acesse pelo GitHub Pages).
+Abra o [index.html](https://lucasrfmiele13-afk.github.io/CaveBuild/) no navegador.
 
 - **Modos:** Sobrevivência e Criativo.
 - **Tamanhos de mundo:** Pequeno, Médio e Grande.
