@@ -33,7 +33,7 @@ Abra o [index.html](https://lucasrfmiele13-afk.github.io/CaveBuild/) no navegado
 
 ## Android
 
-Para jogar no celular, baixe o `cavebuild.apk` ou abra o `index.html` no navegador.
+Para jogar no celular, baixe o [cavebuild.apk](cavebuild.apk) ou abra o [index.html](https://lucasrfmiele13-afk.github.io/CaveBuild/) no navegador.
 
 ## Tecnologia
 
