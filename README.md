@@ -1,7 +1,7 @@
 
 [![Cavebuild](banner.png)](https://lucasrfmiele13-afk.github.io/CaveBuild/)
 
- [Jogar Cavebuild](https://lucasrfmiele13-afk.github.io/CaveBuild/)
+<p align="center"><a href="https://lucasrfmiele13-afk.github.io/CaveBuild/">Jogar Cavebuild</a></p>
     
 # Cavebuild
 
