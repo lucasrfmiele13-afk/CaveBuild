@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
- <meta name="google-site-verification" content="euWYlaxPrGZhg1dLT8NbHoDMmaMObM2aUQBO0mMm4WY" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
- <title>CaveBuild – Jogo de sobrevivência e construção 2.5D no navegador</title>
-<meta name="description" content="CaveBuild é um jogo de sobrevivência e criativo em 2.5D com cavernas, vilas, construção e multiplayer. Jogue grátis no navegador ou no Android.">
-<meta property="og:title" content="CaveBuild – Sobrevivência e construção 2.5D">
-<meta property="og:description" content="Explore cavernas, construa e sobreviva. Jogue grátis no navegador.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lucasrfmiele13-afk.github.io/CaveBuild/">
+<title>Cavebuild 2.5D</title>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#e9efe0;--fg:#1d2a1d;--card:#fff;--bd:#6a8a5a}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101510;--fg:#f2f2e8;--card:#2b3a2b;--bd:#6a8a5a}}
@@ -825,18 +819,22 @@ function rebind(b){b.textContent='Aperte uma tecla...';rbk=b.dataset.k}
 function wipe(){if(!wp)wp=1;else{SS([]);wp=0}settings()}
 function resetCfg(){try{localStorage.removeItem('mc25cfg')}catch(e){}Object.assign(ST,DEF);ST.kb={act:'j',put:'k',run:'shift',inv:'e',u:'w',d:'s',l:'a',r:'d',pa:'escape',nx:'.',pv:','};ST.pos={};apply();settings()}
 function resetUI(){ST.pos={};ST.sc=1;apply();SC();settings('toque')}
-const SETS=[['geral','Geral'],['som','Som'],['acess','Acessibilidade'],['toque','Toque'],['ctrl','Controles'],['teclado','Teclado'],['video','Vídeo'],['como','Como jogar'],['arm','Armazenamento']];
+let LANG=(()=>{try{const v=localStorage.getItem('mc25lang');if(v)return v}catch(e){}return(navigator.language||'pt').toLowerCase().startsWith('en')?'en':'pt'})();
+const TRe={geral:'General',som:'Sound',acess:'Accessibility',toque:'Touch',ctrl:'Controls',teclado:'Keyboard',video:'Video',como:'How to play',arm:'Storage',lang:'Languages'};
+function setLang(l){LANG=l;try{localStorage.setItem('mc25lang',l)}catch(e){}settings('lang')}
+const SETS=[['geral','Geral'],['som','Som'],['acess','Acessibilidade'],['toque','Toque'],['ctrl','Controles'],['teclado','Teclado'],['video','Vídeo'],['como','Como jogar'],['arm','Armazenamento'],['lang','Línguas']];
 function settings(c){curCat=c=c||curCat;let b='';wp=c=='arm'?wp:0;
  if(c=='geral')b=row('aj','Pulo automático')+row('peace','Dificuldade')+row('an0','Animais')+row('as','Salvar sozinho')+row('nm','Nome do item')+row('tt','Tempo do nome')+row('qp','Painel de missões')+`<p>O pulo automático faz o personagem contornar cantos e quinas sozinho.</p>`;
  else if(c=='som')b=somCfg();
  else if(c=='acess')b=row('hc','Alto contraste')+row('big','HUD grande')+row('flash','Flashes de dano')+row('vib','Vibrar ao levar dano')+row('ol','Contorno do bloco')+row('nm','Nome do item')+row('br','Brilho');
  else if(c=='toque')b=row('analog','Direção')+row('dz','Zona morta do analógico')+row('sc','Tamanho dos botões')+row('op','Opacidade dos controles')+row('lh','Lado do direcional')+row('vb','Vibrar ao tocar')+`<button onclick='editUI()'>Ajustar na tela</button><button onclick='resetUI()'>Restaurar posições</button>`;
+ else if(c=='lang')b=`<p>${LANG=='en'?'Choose the language':'Escolha o idioma'}</p><button onclick='setLang("pt")'>Português${LANG=='pt'?' ✓':''}</button><button onclick='setLang("en")'>English${LANG=='en'?' ✓':''}</button>`;
  else if(c=='ctrl')b=row('dz','Zona morta do analógico')+row('analog','Direção')+row('aj','Pulo automático');
  else if(c=='teclado')b=[['act','Ação (bater)'],['put','Colocar / usar'],['inv','Inventário'],['u','Mover para cima'],['d','Mover para baixo'],['l','Mover para esquerda'],['r','Mover para direita'],['nx','Próximo slot'],['pv','Slot anterior'],['pa','Pausar']].map(([k,l])=>`<div class='op'><span>${l}</span><button data-k='${k}' onclick='rebind(this)'>${KN(ST.kb[k])}</button></div>`).join('')+`<p>Mover: setas ou WASD. Toque numa tecla e aperte a nova.</p>`;
  else if(c=='video')b=row('pt','Partículas')+row('sh','Sombras')+row('br','Brilho')+row('zoom','Zoom')+row('dl','Iluminação dinâmica')+row('ol','Contorno do bloco')+row('fps','Mostrar FPS')+row('hudv','HUD (vida/hora)')+`<p>Partículas e sombras têm 4 níveis: desativadas, simples, normais e bonitas. As sombras dos blocos aparecem a partir de Normais.</p>`;
  else if(c=='como')b=`<p>Mover: direcional, setas ou WASD.<br>Bater e quebrar: botão A ou J.<br>Colocar, comer e usar portas, camas e botões: botão B ou K.<br>Slots 1-9 e inventário na mochila (tecla E).<br>Pedra só quebra com picareta; terra e areia com pá; árvores com machado.<br>Durma na cama à noite. Zumbis queimam de dia e fogem para as cavernas nas montanhas.<br>Tochas (carvão ou tronco + graveto) iluminam cavernas e noites e afastam monstros; segure uma na mão para iluminar ao andar.<br>Aranhas rondam as cavernas e a superfície à noite e soltam fio e olho de aranha.<br>Veja as missões no painel (toque no título para recolher, ou tecla Q).</p>`;
  else{const ws=LS();b=`<div class='op'><span>Mundos salvos</span><b>${ws.length}</b></div><div class='op'><span>Espaço usado</span><b>${Math.round(JSON.stringify(ws).length/1024)} KB</b></div><button onclick='wipe()'>${wp?'Confirmar: apagar tudo':'Apagar todos os mundos'}</button><button onclick='resetCfg()'>Restaurar configurações</button>`}
- menu(`<div class='sw'><div class='sb'>${SETS.map(([k,n])=>`<button class='${k==c?'on':''}' data-k='${k}' onclick='settings(this.dataset.k)'>${n}</button>`).join('')}</div><div class='sc'>${b}</div></div><button onclick='backS()'>Voltar</button>`);M.className='set'}
+ menu(`<div class='sw'><div class='sb'>${SETS.map(([k,n])=>`<button class='${k==c?'on':''}' data-k='${k}' onclick='settings(this.dataset.k)'>${(LANG=='en'&&TRe[k])||n}</button>`).join('')}</div><div class='sc'>${b}</div></div><button onclick='backS()'>Voltar</button>`);M.className='set'}
 // ---- toque: analógico e ajuste na tela ----
 const an2=document.createElement('div');an2.id='an';an2.innerHTML='<div id=kn></div>';$('dp').after(an2);
 const anS=e=>{const r=an2.getBoundingClientRect(),R=r.width/2;let dx=(e.clientX-r.left-R)/R,dy=(e.clientY-r.top-R)/R;const m=Math.hypot(dx,dy);if(m>1){dx/=m;dy/=m}$('kn').style.transform=`translate(${dx*R*.5}px,${dy*R*.5}px)`;const z=ST.dz;Fl.l=dx<-z;Fl.r=dx>z;Fl.u=dy<-z;Fl.d=dy>z};
