@@ -80,4 +80,4 @@ Projeto pessoal. Entre em contato antes de reutilizar o código.
 
 ---
 
-<p align="center">Feito com ❤️ por <a href="https://github.com/lucasrfmiele13-afk">Lucas</a></p>
+<p align="center">Feito por <a href="https://github.com/lucasrfmiele13-afk">Lucas</a></p>
