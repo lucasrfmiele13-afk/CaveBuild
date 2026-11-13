@@ -45,6 +45,7 @@
 | <kbd>K</kbd> | Colocar blocos |
 | <kbd>E</kbd> | Abrir inventário |
 | <kbd>T</kbd> | Abrir chat |
+| <kbd>ESC</kbd> | Pausar |
 
 ## 🚀 Como jogar
 
