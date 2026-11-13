@@ -2963,7 +2963,7 @@ respawn=function(){
  hud();resume();
  if(lost)say('Sua cama sumiu. Você renasceu no spawn',2600)};
 
-const verEl=document.createElement('div');verEl.id='ver';verEl.textContent='v1.0.0';document.body.appendChild(verEl);
+const verEl=document.createElement('div');verEl.id='ver';verEl.textContent='v1.0.1';document.body.appendChild(verEl);
 const _menu_v=menu;menu=function(h){verEl.style.display='none';return _menu_v(h)};
 const _title_v=title;title=function(){_title_v();verEl.style.display='block'};
 title();
@@ -3972,6 +3972,75 @@ act1=function(){
     for(const p of(G.npcs||[]))npcs.push(Object.assign({},p));
     if(G.vanim){an.length=0;for(const a of G.vanim)an.push(Object.assign({},a))}
   }}}
+
+;/* ===== tradução para inglês ===== */
+{
+const EN={
+'Voltar':'Back','Inventário':'Inventory','Mochila · toque para guardar':'Backpack · tap to store','Baú · toque para pegar':'Chest · tap to take','∞ Tudo · toque para colocar no baú':'∞ All · tap to put in chest',
+'Configurações':'Settings','Sair do mundo':'Quit world','Sair do mundo online':'Leave online world','Novo mundo':'New world','Criar mundo':'Create world','＋ Novo mundo':'＋ New world',
+'Mundo':'World','Mundo fechado':'World closed','Mundo exportado ✔':'World exported ✔','Exportação cancelada':'Export cancelled','Não foi possível exportar':'Could not export',
+'Sobrevivência':'Survival','Criativo':'Creative','Pequeno':'Small','Médio':'Medium','Grande':'Large','Padrão':'Default','Automática':'Automatic','Automático':'Automatic','Clássica':'Classic','Retrô':'Retro','Pacífico':'Peaceful',
+'Geral':'General','Som':'Sound','Acessibilidade':'Accessibility','Toque':'Touch','Controles':'Controls','Teclado':'Keyboard','Vídeo':'Video','Como jogar':'How to play','Armazenamento':'Storage','Línguas':'Languages',
+'Música':'Music','Música desligada':'Music off','Volume da música':'Music volume','Volume dos botões':'Button volume','Sons de animais':'Animal sounds','Sons de monstros':'Monster sounds','Sons de blocos':'Block sounds','Sons dos botões':'Button sounds','Sons de ambiente':'Ambient sounds',
+'Partículas':'Particles','Iluminação dinâmica':'Dynamic lighting','Pulo automático':'Auto jump','Salvar sozinho':'Auto save','Painel de missões':'Quest panel','Dificuldade':'Difficulty',
+'Alto contraste':'High contrast','HUD grande':'Large HUD','Flashes de dano':'Damage flashes','Vibrar ao levar dano':'Vibrate on damage','Contorno do bloco':'Block outline','Nome do item':'Item name','Tempo do nome':'Name time','Brilho':'Brightness','Zoom':'Zoom',
+'Direção':'Direction','Zona morta do analógico':'Analog dead zone','Tamanho dos botões':'Button size','Opacidade dos controles':'Control opacity','Lado do direcional':'D-pad side','Vibrar ao tocar':'Vibrate on touch','Analógico':'Analog','Botão':'Button',
+'Frequência':'Frequency','Visível':'Visible','Intervalo entre músicas':'Time between songs',
+'Aperte uma tecla...':'Press a key...','Mover: setas ou WASD. Toque numa tecla e aperte a nova.':'Move: arrows or WASD. Tap a key, then press the new one.',
+'Missões':'Quests','Missão completa!':'Quest complete!','Colete madeira':'Collect wood','Crie uma picareta':'Craft a pickaxe','Crie uma tocha':'Craft a torch','Colete pedra':'Collect stone',
+'Crie uma armadura':'Craft armor','Crie uma tocha':'Craft a torch','Construa uma fornalha':'Build a furnace','Abra um baú':'Open a chest','Derrote um monstro':'Defeat a monster','Derrote uma aranha':'Defeat a spider',
+'Coloque um baú e abra-o.':'Place a chest and open it.','Coloque 3 tochas no chão.':'Place 3 torches on the ground.','Crie com 8 pedras e coloque no chão.':'Craft with 8 stones and place on the ground.',
+'Quebre árvores e junte 4 troncos.':'Break trees and gather 4 logs.','Faça tábuas e gravetos e crie uma picareta.':'Make planks and sticks and craft a pickaxe.','Use a fornalha com carvão.':'Use the furnace with coal.',
+'Desça até a 2ª camada das cavernas.':'Go down to the 2nd cave layer.','Desça as escadas nas montanhas.':'Go down the stairs in the mountains.','Funda um minério':'Smelt an ore',
+'Durma numa cama para renascer aqui.':'Sleep in a bed to respawn here.','Ponto de renascimento definido':'Respawn point set','Sua cama sumiu. Você renasceu no spawn':'Your bed is gone. You respawned at spawn',
+'Só dá para dormir à noite 🌙':'You can only sleep at night 🌙','Você caiu da laje':'You fell off the roof','A laje só quebra por baixo, estando no chão':'Roofs only break from below, while on the ground',
+'Esse item não pode ir em cima da laje':"This item can't go on the roof",'Tire os blocos de cima da laje primeiro':'Remove the blocks on top of the roof first',
+'⬆ Em cima da laje':'⬆ On roof','⬇ No chão':'⬇ On ground',
+'Há monstros por perto! 👹':'Monsters nearby! 👹','Elas rondam as cavernas e a superfície à noite.':'They roam the caves and the surface at night.',
+'Começou a chover':'It started raining','Começou a nevar':'It started snowing','Uma tempestade se aproxima':'A storm is coming','Uma tempestade de areia chegou':'A sandstorm arrived','Tempestade de areia':'Sandstorm',
+'A neblina está subindo':'Fog is rising','Céu limpo':'Clear sky','Pôr do Sol':'Sunset',
+'Vila Tranquila':'Quiet Village','Bem-vindo à vila!':'Welcome to the village!','Os aldeões gostam de tranquilidade.':'The villagers like calm.','Vendo pão quando tiver trigo.':'Selling bread once I have wheat.','Já viu a fornalha do ferreiro?':'Have you seen the blacksmith\'s furnace?',
+'Parede de casa':'House wall','Piso de casa':'House floor','Parede de madeira':'Wooden wall','Parede de pedra':'Stone wall','Lanterna':'Lantern','Tocha':'Torch','Poço':'Well','Portão':'Gate','Caldeirão':'Cauldron','Bloco de trigo':'Wheat block','Bloco de abóbora':'Pumpkin block','Bloco de melancia':'Melon block',
+'Chão':'Ground','Água':'Water','Árvore':'Tree','Árvore grande':'Big tree','Árvore pequena':'Small tree','Árvore branca':'White tree','Pinheiro médio':'Medium pine','Laje de madeira':'Wood slab','Laje de pedra':'Stone slab','Laje de pedra escura':'Dark stone slab','Laje de pinheiro':'Pine slab','Laje de tronco':'Log slab','Laje de árvore branca':'White tree slab',
+'Escada para cima':'Stairs up','Escada para baixo':'Stairs down','Escada de mão':'Ladder','Placa de pressão':'Pressure plate','Mesa de craft':'Crafting table','Cortador de blocos':'Block cutter','Sofá':'Sofa',
+'Cama':'Bed','Baú':'Chest','Tábua':'Plank','Maçã':'Apple','Pão':'Bread','Carvão':'Coal','Calça':'Pants','Abóbora':'Pumpkin','Abóbora (broto)':'Pumpkin (sprout)','Abóbora (madura)':'Pumpkin (ripe)','Café (broto)':'Coffee (sprout)','Café (maduro)':'Coffee (ripe)','Café torrado':'Roasted coffee',
+'Semente de abóbora':'Pumpkin seed','Semente de batata':'Potato seed','Semente de café':'Coffee seed','Semente de cenoura':'Carrot seed','Semente de melancia':'Melon seed',
+'Balde de lava':'Lava bucket','Balde de leite':'Milk bucket','Balde de água':'Water bucket','Farinha de osso':'Bone meal','Olho de aranha':'Spider eye',
+'Ovo de aranha':'Spider egg','Ovo de esqueleto':'Skeleton egg','Ovo de galinha':'Chicken egg','Ovo de ovelha':'Sheep egg','Ovo de porco':'Pig egg','Ovo de vaca':'Cow egg','Ovo de zumbi':'Zombie egg',
+'Lingote de cobre':'Copper ingot','Lingote de ferro':'Iron ingot','Lingote de ouro':'Gold ingot','Minério de carvão':'Coal ore','Minério de cobre':'Copper ore','Minério de diamante':'Diamond ore','Minério de ferro':'Iron ore','Minério de ouro':'Gold ore',
+'Espada de madeira':'Wooden sword','Carvão ou tronco, mais um graveto.':'Coal or log, plus a stick.','Cenoura, batata, abóbora, melancia ou café.':'Carrot, potato, pumpkin, melon or coffee.',
+'Vocês já são amigos':'You are already friends','Vocês agora são amigos ✔':'You are now friends ✔','Adicione amigos primeiro para criar um grupo.':'Add friends first to create a group.',
+'Você ainda não tem amigos adicionados.':'You have no friends added yet.','Você ainda não está em nenhum grupo.':'You are not in any group yet.','Nenhum mundo ainda. Crie o primeiro!':'No worlds yet. Create the first one!',
+'Sem estatísticas ainda':'No stats yet','Esse é você 😄':'That\'s you 😄','Escreva uma mensagem...':'Write a message...','Dê um nome ao grupo':'Name the group','Sair do grupo':'Leave group','Nome inválido (3-12 letras/números)':'Invalid name (3-12 letters/numbers)','Esse nome já existe':'This name already exists',
+'Código do mundo copiado ✔':'World code copied ✔','Convite enviado para ':'Invite sent to ','Conectado ao mundo de ':'Connected to the world of ',
+'Não foi possível entrar. Confira o código da LAN.':'Could not join. Check the LAN code.','O host fechou o mundo':'The host closed the world',
+'🎒 Inventário':'🎒 Inventory','📜 Missões':'📜 Quests','🌐 Abrir mundo para amigos':'🌐 Open world to friends','🎨 Texturas':'🎨 Textures','🌐 Mundos públicos':'🌐 Public worlds','🔔 Convites de grupo':'🔔 Group invites','🔔 Ativar notificações':'🔔 Enable notifications','🌐 Entrar no mundo':'🌐 Join world',
+'Escolha o visual do jogo.':'Choose the look of the game.','Toque na tela para iniciar':'Tap the screen to start','Toque num bloco para colocar no slot ':'Tap a block to place it in slot ',
+'Próximo slot':'Next slot','Ajustar na tela':'Adjust on screen','Restaurar posições':'Reset positions','Ativar notificações':'Enable notifications',
+'Passos':'Footsteps','Sons do combate':'Combat sounds','Animais':'Animals','Monstros':'Monsters','Botões e mundo':'Buttons and world','Música':'Music','Dificuldade':'Difficulty',
+'Qualquer peça: couro, cobre, ferro...':'Any piece: leather, copper, iron...','Ação (bater)':'Action (hit)','Mover para cima':'Move up','Mover para baixo':'Move down','Mover para esquerda':'Move left','Mover para direita':'Move right','Espaço':'Space','Próximo slot':'Next slot',
+'Mundos públicos':'Public worlds','Código: ':'Code: ','🔑 Código da LAN: ':'🔑 LAN code: ','🤝 Agora você e ':'🤝 You and ','Comeu':'Ate','Salvar':'Save','Salvar sozinho':'Auto save',
+'Sair':'Quit','Criar':'Create','Entrar':'Join','Fechar':'Close','Cancelar':'Cancel','Confirmar':'Confirm','Excluir':'Delete','Abrir':'Open','Ok':'OK','Sim':'Yes','Não':'No',
+'Coloque um baú':'Place a chest'
+};
+const keys=Object.keys(EN).sort((a,b)=>b.length-a.length);
+window.TXL=function(t){
+  if(LANG!='en'||typeof t!='string'||!t)return t;
+  if(EN[t]!==undefined)return EN[t];
+  let r=t;for(const k of keys){if(k.length>=3&&r.indexOf(k)>=0)r=r.split(k).join(EN[k])}
+  return r;
+};
+// canvas: HUD, missões, nomes de itens
+for(const fn of ['fillText','strokeText']){const o=CanvasRenderingContext2D.prototype[fn];CanvasRenderingContext2D.prototype[fn]=function(t,...a){return o.call(this,TXL(String(t)),...a)}}
+// textos da tela (menus, botões, abas)
+function trDom(){
+  if(LANG!='en')return;
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let n;while(n=w.nextNode()){const v=n.nodeValue;if(!v||!v.trim())continue;const t=TXL(v);if(t!==v)n.nodeValue=t}
+  document.querySelectorAll('[placeholder]').forEach(e=>{const p=TXL(e.placeholder);if(p!==e.placeholder)e.placeholder=p});
+}
+setInterval(trDom,400);
+}
 </script>
 </body>
 </html>
